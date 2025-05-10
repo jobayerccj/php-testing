@@ -1,2 +1,5 @@
 .idea/
 vendor/
+notes.txt
+.phpunit.result.cache
+.phpunit.cache/
