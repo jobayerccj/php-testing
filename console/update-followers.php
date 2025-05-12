@@ -1,4 +1,4 @@
-<?php // console/update-followers.php
+<?php
 
 use App\Http\TwitterClient;
 use App\Command\UpdateFollowersCommand;
