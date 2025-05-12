@@ -24,4 +24,11 @@ class DatabaseDependantTestCase extends TestCase
         $this->entityManager->close();
         $this->entityManager = null;
     }
+
+    public function assertDatabaseHasEntry(string $entityName, array $criteria)
+    {
+        $result = $this->entityManager->getRepository($entityName)->findOneBy($criteria);
+
+        $this->assertTrue((bool) $result, sprintf('No entry found in the database for %s with criteria: %s', $entityName, json_encode($criteria)));
+    }
 }

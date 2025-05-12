@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Integration\Http;
+namespace App\Tests\integration\Http;
 
 use PHPUnit\Framework\TestCase;
 use App\Http\SymfonyHttpApplicationClient;

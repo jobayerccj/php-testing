@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Utility;
+namespace App\Utility;
 
 class ArrayHelper
 {

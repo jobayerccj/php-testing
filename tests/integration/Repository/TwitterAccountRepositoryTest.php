@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\Integration\Repository;
+namespace App\Tests\integration\Repository;
 
 use App\Entity\TwitterAccount;
 use App\Tests\DatabaseDependantTestCase;

@@ -1,8 +1,8 @@
-<?php // src/Http/TwitterClient.php
+<?php
 
 namespace App\Http;
 
-use App\Tests\Utility\ArrayHelper;
+use App\Utility\ArrayHelper;
 
 class TwitterClient
 {
@@ -22,6 +22,5 @@ class TwitterClient
         $user = $this->applicationClient->get($url);
 
         return ArrayHelper::flattenArray(json_decode($user, true)['data']);
-        //return json_decode($user, true)['data'];
     }
 }
