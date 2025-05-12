@@ -43,6 +43,6 @@ class TwitterClientTest extends TestCase
         $this->assertEquals($accountId, $result['id']);
         $this->assertEquals('Test User', $result['name']);
         $this->assertEquals('testuser', $result['username']);
-        $this->assertEquals(1000, $result['public_metrics']['followers_count']);
+        $this->assertEquals(1000, $result['followers_count']);
     }
 }

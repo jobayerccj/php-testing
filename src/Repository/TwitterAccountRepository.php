@@ -2,7 +2,6 @@
 
 namespace App\Repository;
 
-use App\Utility\DateHelper;
 use App\Entity\TwitterAccount;
 use Doctrine\ORM\EntityRepository;
 
@@ -18,5 +17,18 @@ class TwitterAccountRepository extends EntityRepository
             ->getQuery();
 
         return $query->getOneOrNullResult();
+    }
+
+    public function addNewAccount(array $userData)
+    {
+        $twitterAccount = new $this->_entityName;
+        $twitterAccount->setTwitterAccountId($userData['id']);
+        $twitterAccount->setUsername($userData['username']);
+        $twitterAccount->setTweetCount($userData['tweet_count']);
+        $twitterAccount->setListedCount($userData['listed_count']);
+        $twitterAccount->setFollowingCount($userData['following_count']);
+        $twitterAccount->setFollowerCount($userData['followers_count']);
+        $twitterAccount->setFollowersPerWeek($userData['newFollowersPerWeek']);
+        $this->_em->persist($twitterAccount);
     }
 }

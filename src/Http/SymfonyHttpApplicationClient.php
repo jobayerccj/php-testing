@@ -17,13 +17,14 @@ class SymfonyHttpApplicationClient implements ApplicationClientInterface
     public function get(string $url): string
     {
         try {
-
             $response = $this->httpClient->request('GET', $url);
-
             return $response->getContent();
 
         } catch (\Exception $exception) {
-            throw new ApplicationClientException($exception->getMessage());
+            throw new ApplicationClientException(
+                $exception->getMessage(),
+                $exception->getCode(),
+            );
         }
     }
 }
